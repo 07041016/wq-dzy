@@ -5,7 +5,7 @@
 >
 > - 仓库：<https://github.com/07041016/wq-dzy>
 > - 作者：马瑶函（20230313211）· 独立完成
-> - 包名：`com.example.myhdzy`（调试签名 Profile 绑定，故未改）
+> - 包名：`com.example.myhdzy`
 
 ## 一、这个应用做什么
 
