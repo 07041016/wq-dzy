@@ -124,7 +124,8 @@ hvigorw --mode module -p module=entry@default test --no-daemon
 | `01-env-panel.jpeg` | 环境模拟台：四路滑块、设备现状、场景演练、冲突提示 |
 | `02-rule-list.jpeg` | 规则列表：6 条规则、优先级徽标、启停开关、冲突提示 |
 | `03-device-panel.jpeg` | 设备面板：5 台设备、开关与属性步进 |
-| `04-exec-log.jpeg` | 执行日志：顺序 1/2/3、条件文本、冲突与跳过标记 |
+| `04-exec-log.jpeg` | 执行日志：顺序 / 冲突 / 跳过三种标签与条件文本 |
+| `05-restore-after.jpeg` | 与 02 成对：`adb shell am force-stop` 后冷启动，仍显示"启用 4 条"、P75 仍停用 |
 
 ## 九、录屏
 
