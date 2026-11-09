@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "栖舍·智能宿舍联动实验室"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "智能宿舍自动化规则编排"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "栖舍"
+    }
+  ]
+}
