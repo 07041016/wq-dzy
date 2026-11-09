@@ -6,8 +6,9 @@ import { ConditionTextBuilder } from '../engine/ConditionTextBuilder';
 import { RuleRepository } from '../store/RuleRepository';
 import { LogRepository } from '../store/LogRepository';
 import { EnvStore } from './EnvStore';
-import { Keys } from '../model/Keys';
+import { Keys, Events } from '../model/Keys';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { emitter } from '@kit.BasicServicesKit';
 
 const DOMAIN: number = 0x0001;
 const TAG: string = 'QisheTick';
@@ -106,6 +107,19 @@ export class TickRunner {
     AppStorage.setOrCreate<Device[]>(Keys.DEVICES, devices);
     AppStorage.setOrCreate<string>(Keys.CONFLICT_TIP, TickRunner.tipOf(plan));
     AppStorage.setOrCreate<string>(Keys.LAST_PLAN, TickRunner.summaryOf(plan, devices));
+    TickRunner.broadcast(plan, devices);
+  }
+
+  /**
+   * 进程内事件：一次 tick 完成后广播 plan:applied，日志页据此重新查库。
+   * 与 @StorageProp 的 logVersion 是两条独立路径，任一失效都不会导致日志不刷新。
+   */
+  static broadcast(plan: ExecutionPlan, devices: Device[]): void {
+    try {
+      emitter.emit(Events.PLAN_APPLIED);
+    } catch (err) {
+      hilog.warn(DOMAIN, TAG, 'emit plan:applied failed: %{public}s', JSON.stringify(err));
+    }
   }
 
   /** 规则页顶部的橙色提示条文案 */
@@ -133,5 +147,6 @@ export class TickRunner {
     return ConditionTextBuilder.actionsText(step.actions, devices);
   }
 }
+
 
 

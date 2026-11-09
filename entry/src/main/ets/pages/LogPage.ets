@@ -1,13 +1,20 @@
+import { emitter } from '@kit.BasicServicesKit';
 import { Device, ExecutionRecord } from '../model/Types';
 import { Defaults } from '../model/Defaults';
 import { Fmt } from '../model/Readers';
+import { Keys, Events } from '../model/Keys';
 import { ConditionTextBuilder } from '../engine/ConditionTextBuilder';
 import { LogRepository } from '../store/LogRepository';
 import { Ui } from '../common/Ui';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const DOMAIN: number = 0x0001;
+const TAG: string = 'QisheLogPage';
 
 /**
  * 执行日志：从 RDB 按 ts 倒序分页读取，最多展示最近 100 条。
- * “顺序 N”就是策略里的 seq，冲突与跳过都会留痕。
+ * “顺序 N”就是策略里的 seq；冲突与跳过都会留痕。
+ * 刷新有两条触发路径：StorageProp 的 logVersion 变化，以及 plan:applied 进程内事件。
  */
 @Component
 export struct LogPage {
@@ -16,9 +23,25 @@ export struct LogPage {
   @State logs: ExecutionRecord[] = [];
   @State total: number = 0;
   @State loading: boolean = false;
+  private planListener: (data: emitter.EventData) => void = () => {
+    this.reload();
+  };
 
   aboutToAppear(): void {
+    try {
+      emitter.on(Events.PLAN_APPLIED, this.planListener);
+    } catch (err) {
+      hilog.warn(DOMAIN, TAG, 'emitter.on failed: %{public}s', JSON.stringify(err));
+    }
     this.reload();
+  }
+
+  aboutToDisappear(): void {
+    try {
+      emitter.off(Events.PLAN_APPLIED, this.planListener);
+    } catch (err) {
+      hilog.warn(DOMAIN, TAG, 'emitter.off failed: %{public}s', JSON.stringify(err));
+    }
   }
 
   onLogChanged(): void {
@@ -154,9 +177,6 @@ export struct LogPage {
       .layoutWeight(1)
       .padding({ left: 14, right: 14 })
       .scrollBar(BarState.Off)
-      .onReachEnd(() => {
-        this.reload();
-      })
     }
     .width('100%')
     .height('100%')

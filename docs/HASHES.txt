@@ -38,13 +38,13 @@ e661fb503f978c524ab486135282803d2ac0bb3bc95bd7e5a0530d1047f368e9     3179 B  ent
 df068fb0c0c7621ce4e377087d2951a84ecaf7a66ed0faeb6185d9f63b2b7e39     1647 B  entry/src/main/ets/entryability/EntryAbility.ets
 ae94f286234d41ad5fa9f70bfd11f61e2f609994d6f16687d1ce4ec442115e5d      522 B  entry/src/main/ets/entrybackupability/EntryBackupAbility.ets
 10f258eabc486b6d2d19a14fd2df5c345db97a33e2de3020f160337cb15451f5     5899 B  entry/src/main/ets/model/Defaults.ets
-aff72fd6f0ffca72677057f7eb85faf2ea28706cce9c52ce7a7077b268afec81      814 B  entry/src/main/ets/model/Keys.ets
+297391537730ef8b964545a2fc40e12d579c9a04bb49c80b7d99dd43fa9d439f     1069 B  entry/src/main/ets/model/Keys.ets
 58d4f7fc7fa1eaf624d98d351fa74e674c9629ca5a591ff14bbb726479b44ec8     5796 B  entry/src/main/ets/model/Readers.ets
 9e0b85694f83e35089c3bec59e2f566b9ca13abc7a50a2cf809198bb54274fa1     4505 B  entry/src/main/ets/model/Types.ets
 305117962729536dd9fcefe4a5aa289de51d9c29089e4aed6ec9986334d53575     4696 B  entry/src/main/ets/pages/DevicePage.ets
 96a276fe20d638ef543b2b52083b5bfa1880e10cc8c711aa18f66ca67d3596cc     7602 B  entry/src/main/ets/pages/EnvPanelPage.ets
 9a30e0dcc4b2df3b063ea0708c5f2665f003b4bff1502a5b74f54a5ac5b38733     3404 B  entry/src/main/ets/pages/Index.ets
-b94f7153f7599971f65ab3be8892633d53eb1b06288e3be78f751a058feac745     4425 B  entry/src/main/ets/pages/LogPage.ets
+8d81e6e189c6d6d8dc484ee857f80012d2de91c7bc7e47b2fd6dc3847fbb219b     5197 B  entry/src/main/ets/pages/LogPage.ets
 1a8a1d1d52c3d27ac9bed522650aaba98260e3908a048328d971ee8d34eff0ff    16514 B  entry/src/main/ets/pages/RuleEditPage.ets
 fda41316d017859518ee317fd7b95fa2de30364253c6c36b46875e9344de608a     5312 B  entry/src/main/ets/pages/RuleListPage.ets
 f9b8d716febc6631a6af918fa622108f6aaadfbbbb62badc4ab5729ab58d7c74     6588 B  entry/src/main/ets/store/LogRepository.ets
@@ -52,8 +52,8 @@ f9b8d716febc6631a6af918fa622108f6aaadfbbbb62badc4ab5729ab58d7c74     6588 B  ent
 e0851017d226f2bf97e9528ec792074f20025552b95ee91e2c369113c3a3d175     3692 B  entry/src/main/ets/store/RuleRepository.ets
 6f74512c0712accaf9ba021e961a29adeea63be5dd278fd99687a44fd6ba0e63     1446 B  entry/src/main/ets/store/SceneRepository.ets
 3deb86c419e1bd987bca9baf6400ddd7bf336c144a12bf2db1409cbdc9d9bad5     4414 B  entry/src/main/ets/viewmodel/Boot.ets
-c7d2b3b2cb6009165ae8517e5fdaecedfc5c7e830ff01e8e58a725d1c6fd3124     2054 B  entry/src/main/ets/viewmodel/EnvStore.ets
-016c1e3d570469688cb89cba2cabb3ea7fb4d0dab5c7f0319b2bdbd18135c016     5032 B  entry/src/main/ets/viewmodel/TickRunner.ets
+015f8d2c43b817cbdeac3e359d6be79672f7535fb9de16008373eecd050af6d3     2816 B  entry/src/main/ets/viewmodel/EnvStore.ets
+d7bd81e465acf03f722a0cd3cc01d4c03631311998b39f2d8e22e5cd6d35e074     5739 B  entry/src/main/ets/viewmodel/TickRunner.ets
 40dce2e2f49200e562eaad66d43f3212f4371cafd2c83c558c2cb6401434ef52      105 B  entry/src/main/resources/base/element/color.json
 3ad317ad8b46b69683fce81f0e5b808dfde752594ec0334691917af7b5383a12      100 B  entry/src/main/resources/base/element/float.json
 aaa0d8888d43491b1838e9c47c4c1d2c744f5aa011b9e4ca62967205201436ff      287 B  entry/src/main/resources/base/element/string.json

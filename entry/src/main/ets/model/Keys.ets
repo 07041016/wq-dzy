@@ -12,9 +12,14 @@ export class Keys {
   static readonly LAST_PLAN: string = 'lastPlanTip';
 }
 
-/** 进程内事件名（@ohos.events.emitter） */
+/**
+ * 进程内事件名（@kit.BasicServicesKit 的 emitter）。
+ * API 24 的 emitter.on/emit 只接受 InnerEvent 或字符串事件名，这里统一用字符串，
+ * 语义也更直白：'env:changed' → 环境变化，'plan:applied' → 一次 tick 已落库。
+ */
 export class Events {
-  static readonly ENV_CHANGED: number = 1001;
-  static readonly RULE_CHANGED: number = 1002;
-  static readonly PLAN_APPLIED: number = 1003;
+  static readonly ENV_CHANGED: string = 'env:changed';
+  static readonly RULE_CHANGED: string = 'rule:changed';
+  static readonly PLAN_APPLIED: string = 'plan:applied';
 }
+

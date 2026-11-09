@@ -1,10 +1,15 @@
+import { emitter } from '@kit.BasicServicesKit';
 import { EnvKey, EnvSnapshot } from '../model/Types';
 import { EnvReader } from '../model/Readers';
 import { Defaults } from '../model/Defaults';
 import { RuleRepository } from '../store/RuleRepository';
-import { Keys } from '../model/Keys';
+import { Keys, Events } from '../model/Keys';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-/** 环境状态：clamp、写 AppStorage、防抖落盘 */
+const DOMAIN: number = 0x0001;
+const TAG: string = 'QisheEnv';
+
+/** 环境状态：clamp、写 AppStorage、防抖落盘、广播 env:changed */
 export class EnvStore {
   private static saveTimer: number = -1;
 
@@ -46,6 +51,19 @@ export class EnvStore {
   static publish(env: EnvSnapshot): void {
     AppStorage.setOrCreate<EnvSnapshot>(Keys.ENV, env);
     EnvStore.scheduleSave(env);
+    EnvStore.broadcast(env);
+  }
+
+  /**
+   * 进程内事件：环境变化 → 关心它的页面/服务各自响应，互不直接调用。
+   * 只发通知不带载荷：订阅方从 AppStorage / RDB 读最新值，避免事件数据与状态两份真相。
+   */
+  static broadcast(env: EnvSnapshot): void {
+    try {
+      emitter.emit(Events.ENV_CHANGED);
+    } catch (err) {
+      hilog.warn(DOMAIN, TAG, 'emit env:changed failed: %{public}s', JSON.stringify(err));
+    }
   }
 
   /** 400 ms 防抖：拖动过程中不反复序列化 */
