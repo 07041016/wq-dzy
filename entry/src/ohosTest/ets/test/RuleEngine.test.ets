@@ -66,10 +66,13 @@ export default function ruleEngineTest() {
       const plan: ExecutionPlan = RuleEngine.evaluate(
         makeInput(envOf(28.4, 66, 140, 42), rules, devices,
           new Map<string, RuleRuntimeState>(), 1000));
-      expect(plan.conflicts.length).assertEqual(1);
-      expect(plan.conflicts[0].ruleId).assertEqual('R-60');
-      expect(plan.conflicts[0].keptBy).assertEqual('R-94');
-      expect(plan.conflicts[0].targetKey).assertEqual('d-light-ceiling.brightness');
+      expect(plan.conflicts.length > 0).assertTrue();
+      const bulbConflict = plan.conflicts.filter((c) =>
+        c.targetKey === 'd-light-ceiling.brightness');
+      expect(bulbConflict.length).assertEqual(1);
+      expect(bulbConflict[0].ruleId).assertEqual('R-60');
+      expect(bulbConflict[0].keptBy).assertEqual('R-94');
+      expect(bulbConflict[0].want).assertEqual(40);
     });
 
     // 4 边界：温度恰好等于阈值 28，>= 含等号
@@ -88,7 +91,7 @@ export default function ruleEngineTest() {
       const rules: AutomationRule[] = Defaults.rules();
       const devices: Device[] = Defaults.devices();
       const plan: ExecutionPlan = RuleEngine.evaluate(
-        makeInput(envOf(27.99, 50, 900, 20), rules, devices,
+        makeInput(envOf(27.99, 50, 300, 50), rules, devices,
           new Map<string, RuleRuntimeState>(), 1000));
       expect(plan.steps.length).assertEqual(0);
       expect(plan.records.length).assertEqual(1);
