@@ -1,0 +1,71 @@
+栖舍 Qishe · 源码指纹清单
+==============================================================================
+
+一、外部给定的三个 SHA-256（来源未知，需与下列文件逐一核对）
+  1. 3f24e781c509172b640a92d85ce047911829380ed14a76154202617496c4285
+  2. 8902da1463f7051b2e6cc215d34792410758b7311205067199084f04172a9874
+  3. d7104a68925bc39271e604f9081c4634a01297e6230782516435918007d41923
+
+  说明：SHA-256 是单向摘要，无法由哈希反推内容；此表用于反向核对——
+  若某个文件的哈希与之相同，说明该文件就是这三个哈希当初对应的对象。
+
+二、本项目全部源文件的 SHA-256（58 个）
+
+4eb6aaa9ab0bf7d98c5d9243475a86355dfafcc8ca32760c7186f90b00e4fe40     8150 B  README.md
+4658d7444d4afdbb977221f1cb9cbdfb83d9d0ca5bc92390b825028be8d679e0     1583 B  build-profile.json5
+f557c3bcdb40c64c986bffed9628310cc7a79fb7d2642c1c8b8d265fd92e25ad      854 B  code-linter.json5
+383227660c07fa9335caf3e65b8975c65fcbcc8b910ba84d0bc67b22afcd56cd      227 B  hvigorfile.ts
+738d44a280f1bec5bbcac8cf183d8d02c87c856d45768a02dadd2feba404beef     1002 B  oh-package-lock.json5
+46e90386c64a3a0206a1b2fb09d8b7066263a82ab1a3e124ee521509e1657d24      211 B  oh-package.json5
+8df15ad989c9ed4ebf39b4e05badae6607e05f7d617138ac0a6952eb2793046e      242 B  AppScope/app.json5
+31e525f341ff97e9b1f39225480e5cf338a4ca13385008a7c506396c986d64dc       83 B  AppScope/resources/base/element/string.json
+3d18dcd7ed9e7d3d2c54c20cb80a44eb4877c661131c68a46e20b6e19d0bb476      109 B  AppScope/resources/base/media/layered_image.json
+165c5e02e368cfae38401dbfc371a106ab3f5a8a1ed05078625c0f1c573476dc      540 B  entry/build-profile.json5
+67cc02aa9ccf2f3a2c58e7fee4b6e3a00ffb6128c11f76b7fec5f00ad2d63581      227 B  entry/hvigorfile.ts
+c7f48577fcd27a346883a1a527653eff132cab29666133a49e1ec4d372ec5a93     1024 B  entry/obfuscation-rules.txt
+5721fda56a382803c6c18c8f86208fd5a5548d2fa5e045c9e0b52c48d9220e7c      183 B  entry/oh-package.json5
+6f133d67a9044bdc6d559536057c3bbe81caef6d2934810bfc59ea151dac9020     1313 B  entry/src/main/module.json5
+ecd3b64305922d26619e045139aa9be1c6778502d8af0655580cf17183feebb8     1637 B  entry/src/main/ets/common/Ui.ets
+3ccee5b90269a2e97cac060a20ff5630e93470b754c6db4a941d64ab09dac010     1159 B  entry/src/main/ets/components/ChipRow.ets
+9da645f5f6e7f1b4d7bf49ed2c2730cf9f97a04209d2822b38d81ae49c068d29     1355 B  entry/src/main/ets/components/DeviceChip.ets
+ef9197030a761f4504c666a94401a75afaf7a41a1abf9d1776375a25017eed2b     1411 B  entry/src/main/ets/components/EnvSliderRow.ets
+58e34fa5c75e136ff06cf4b87e401a54589443978ae28efda633a1fdec49d065      915 B  entry/src/main/ets/components/NumberField.ets
+9d6b24b17470ba609891833991096020dc0c621997dbf0f1ae67f5b92c6e722b     1848 B  entry/src/main/ets/engine/ConditionEvaluator.ets
+0dc3a55e7791d2717f5d77c99b91a188dcf71d16376a2025746efac261daee5e     3334 B  entry/src/main/ets/engine/ConditionTextBuilder.ets
+cbdef161e07ed2d733e55cc7b4891802e6fa6b3eeb8f2cea4d407951f3992cb7     3090 B  entry/src/main/ets/engine/ConflictResolver.ets
+e661fb503f978c524ab486135282803d2ac0bb3bc95bd7e5a0530d1047f368e9     3179 B  entry/src/main/ets/engine/RuleEngine.ets
+397b1acb039f533cfbb367ceccc1b8cf92e112ea2cbe355fa456f391645a0941     2143 B  entry/src/main/ets/engine/RuleValidator.ets
+df068fb0c0c7621ce4e377087d2951a84ecaf7a66ed0faeb6185d9f63b2b7e39     1647 B  entry/src/main/ets/entryability/EntryAbility.ets
+ae94f286234d41ad5fa9f70bfd11f61e2f609994d6f16687d1ce4ec442115e5d      522 B  entry/src/main/ets/entrybackupability/EntryBackupAbility.ets
+10f258eabc486b6d2d19a14fd2df5c345db97a33e2de3020f160337cb15451f5     5899 B  entry/src/main/ets/model/Defaults.ets
+aff72fd6f0ffca72677057f7eb85faf2ea28706cce9c52ce7a7077b268afec81      814 B  entry/src/main/ets/model/Keys.ets
+58d4f7fc7fa1eaf624d98d351fa74e674c9629ca5a591ff14bbb726479b44ec8     5796 B  entry/src/main/ets/model/Readers.ets
+9e0b85694f83e35089c3bec59e2f566b9ca13abc7a50a2cf809198bb54274fa1     4505 B  entry/src/main/ets/model/Types.ets
+305117962729536dd9fcefe4a5aa289de51d9c29089e4aed6ec9986334d53575     4696 B  entry/src/main/ets/pages/DevicePage.ets
+96a276fe20d638ef543b2b52083b5bfa1880e10cc8c711aa18f66ca67d3596cc     7602 B  entry/src/main/ets/pages/EnvPanelPage.ets
+9a30e0dcc4b2df3b063ea0708c5f2665f003b4bff1502a5b74f54a5ac5b38733     3404 B  entry/src/main/ets/pages/Index.ets
+b94f7153f7599971f65ab3be8892633d53eb1b06288e3be78f751a058feac745     4425 B  entry/src/main/ets/pages/LogPage.ets
+1a8a1d1d52c3d27ac9bed522650aaba98260e3908a048328d971ee8d34eff0ff    16514 B  entry/src/main/ets/pages/RuleEditPage.ets
+fda41316d017859518ee317fd7b95fa2de30364253c6c36b46875e9344de608a     5312 B  entry/src/main/ets/pages/RuleListPage.ets
+f9b8d716febc6631a6af918fa622108f6aaadfbbbb62badc4ab5729ab58d7c74     6588 B  entry/src/main/ets/store/LogRepository.ets
+2025436d30b8db14a0ee4a3c01e210b333d9e5a95413a10a6537855d33970a73     2408 B  entry/src/main/ets/store/Prefs.ets
+e0851017d226f2bf97e9528ec792074f20025552b95ee91e2c369113c3a3d175     3692 B  entry/src/main/ets/store/RuleRepository.ets
+6f74512c0712accaf9ba021e961a29adeea63be5dd278fd99687a44fd6ba0e63     1446 B  entry/src/main/ets/store/SceneRepository.ets
+3deb86c419e1bd987bca9baf6400ddd7bf336c144a12bf2db1409cbdc9d9bad5     4414 B  entry/src/main/ets/viewmodel/Boot.ets
+c7d2b3b2cb6009165ae8517e5fdaecedfc5c7e830ff01e8e58a725d1c6fd3124     2054 B  entry/src/main/ets/viewmodel/EnvStore.ets
+016c1e3d570469688cb89cba2cabb3ea7fb4d0dab5c7f0319b2bdbd18135c016     5032 B  entry/src/main/ets/viewmodel/TickRunner.ets
+40dce2e2f49200e562eaad66d43f3212f4371cafd2c83c558c2cb6401434ef52      105 B  entry/src/main/resources/base/element/color.json
+3ad317ad8b46b69683fce81f0e5b808dfde752594ec0334691917af7b5383a12      100 B  entry/src/main/resources/base/element/float.json
+aaa0d8888d43491b1838e9c47c4c1d2c744f5aa011b9e4ca62967205201436ff      287 B  entry/src/main/resources/base/element/string.json
+3d18dcd7ed9e7d3d2c54c20cb80a44eb4877c661131c68a46e20b6e19d0bb476      109 B  entry/src/main/resources/base/media/layered_image.json
+9447811de67729d65b6c0d76720ce53dad97f70a4b0bbe1946a8dc1c7de717f5       36 B  entry/src/main/resources/base/profile/backup_config.json
+51a9c6a739716d238b8f19d79fecff7dc572ff3b7468eea9af9d26faed447f7a       62 B  entry/src/main/resources/base/profile/main_pages.json
+d6be6bfa9cfce320f6bb9b92dd09614db27e16bc2c9c90edf057bd682dc3ecbf      105 B  entry/src/main/resources/dark/element/color.json
+8eb95bcbc154530931e15fc418c8b1fe991095671409552099ea1aa596999ede        3 B  entry/src/mock/mock-config.json5
+a5b9e3dc7979f961a92ae014ad0f380212f6e83ea6090d512800250640b9bcc0      187 B  entry/src/ohosTest/module.json5
+8600c6681413e2ee3283671c6a67c2bb1421726559163aca8596ff17d2a389d6     1734 B  entry/src/ohosTest/ets/test/Ability.test.ets
+7f3218e723d077e3a7adfb07bf689cb520ed7da886537b344ba338cd1198df51      168 B  entry/src/ohosTest/ets/test/List.test.ets
+dab80c90dd9a1d7f2bf1cc9844b5f8b1858ac721f0da1b9a4cfa05ae9882a5a3     7085 B  entry/src/ohosTest/ets/test/RuleEngine.test.ets
+268e4980ef2fdfe0c7ff6a19402bc214ab90f25807998098d2513cc50e9dd86b      105 B  entry/src/test/List.test.ets
+ab72e1fa03e7c61ec51a52fe56fd366f66aa1a4415e18c7953daf5be14f488b7     1624 B  entry/src/test/LocalUnit.test.ets
+5d3f095eedc3f393c057a3bdf2fa40a1ac4d115755b2c8a43825be9ac90bbc9b     1482 B  hvigor/hvigor-config.json5
