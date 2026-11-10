@@ -3,7 +3,7 @@
 > 《鸿蒙高级应用开发工程师认证》期末大作业 · 主题三「联动实验室」
 > 面向智能宿舍的「当……就……」自动化规则编排 App，用 Mock 环境代替真实传感器与执行器。
 >
-> - 仓库：<https://github.com/07041016/wq-dzy>
+> - 仓库：<https://github.com/07041016/wq-dzy/tree/master>
 > - 作者：马瑶函（20230313211）· 独立完成
 > - 包名：`com.example.myhdzy`
 
@@ -25,7 +25,7 @@
 | 4 类 5 台设备 | 顶灯 / 床头灯（照明）、空调（温控）、风扇（通风）、窗帘（遮光） | `model/Defaults.ets` |
 | 4 路环境可调 | 温度 −10~45 ℃、湿度 0~100 %、光照 0~2000 lx、噪声 0~100 dB | `pages/EnvPanelPage.ets` |
 | 6 条规则（3 条双条件） | R-94 夜间自习、R-88 高温通风、R-75 晨起透光、R-60 午休助眠、R-45 闷湿排风（默认停用）、R-30 离舍断电 | `model/Defaults.ets` |
-| 规则增删改查 | 名称、优先级 1~99、冷却时间、条件组、动作组 | `pages/RuleEditPage.ets` |
+| 规则新增与编辑 | 名称、优先级 1~99、冷却时间、条件组、动作组 | `pages/RuleEditPage.ets` |
 | 规则引擎 | 过滤 → 求值 → 排序 → 冲突消解 → 冷却判定 → 生成 seq | `engine/` |
 | 冲突处理 | targetKey 占用 + priority 降序 + createdSeq 升序 | `engine/ConflictResolver.ets` |
 | 执行日志 | RDB 一张表，ts 倒序索引，上限 500 行 | `store/LogRepository.ets` |
@@ -41,7 +41,7 @@
 | 模型 | Stage 模型，ArkTS + ArkUI 声明式 |
 | 状态管理 | V1（`@State` / `@Prop` / `@StorageLink` / `@StorageProp`） |
 | 测试框架 | Hypium 1.0.25 + Hamock 1.0.0 |
-| 运行载体 | Phone 模拟器（API 26 镜像，向下兼容 6.1.1(24)） |
+| 运行载体 | Phone 模拟器（API 26 镜像）；工程兼容 HarmonyOS 6.1.1(API 24) |
 
 ## 四、目录结构
 
@@ -63,7 +63,9 @@ entry/src/main/ets/
 docs/
 ├── 软件需求说明书.md
 ├── HASHES.txt                    # 源码 SHA-256 指纹清单
-└── screenshots/                  # 模拟器实机截图（4 张）
+├── 验收与测试记录.md             # 最终构建、测试和强杀恢复记录
+├── qishe-demo.mp4                # 67 秒模拟器演示录屏
+└── screenshots/                  # 模拟器实机截图（5 张）
 ```
 
 ## 五、怎么跑起来
@@ -91,7 +93,8 @@ hdc shell aa start -a EntryAbility -b com.example.myhdzy
 hvigorw --mode module -p module=entry@default test --no-daemon
 ```
 
-或在 DevEco 中右键 `entry/src/ohosTest/ets/test/RuleEngine.test.ets` → Run。
+命令行入口使用 `entry/src/test/` 下的本地单测文件；同一套 9 条业务用例也保留在
+`entry/src/ohosTest/ets/test/RuleEngine.test.ets`，可在 DevEco 中作为设备测试运行。
 
 9 条用例覆盖：
 
@@ -104,6 +107,10 @@ hvigorw --mode module -p module=entry@default test --no-daemon
 7. 异常：环境值 NaN → 不抛异常、不命中
 8. 异常：条件组为空 → 校验拒绝
 9. 异常：schemaVersion 不符 / JSON 损坏 → 回落 6 条种子规则
+
+本次验证在 DevEco 6.0.0 / Windows 本地 UnitTestArkTS 执行，结果为 9 条业务用例
+加 1 条模板烟测共 10 条通过、0 失败。用例输入由确定性对象字面量构造，`now`
+由测试注入；当前测试集不依赖 `Hamock` 操作真实 RDB。持久化另由模拟器强杀重启验证。
 
 ## 七、持久化设计
 

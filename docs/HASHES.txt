@@ -11,7 +11,7 @@
 
 二、本项目全部源文件的 SHA-256（59 个）
 
-e033cb2f9d2c15b19a62a7433e2db39f658753be5eb6fca2bf8af849cc9897f2     8700 B  README.md
+69e1eabb223b79ae46be54299294a415f2c3bce545bbed51631e5041982329ce     8954 B  README.md
 4658d7444d4afdbb977221f1cb9cbdfb83d9d0ca5bc92390b825028be8d679e0     1583 B  build-profile.json5
 f557c3bcdb40c64c986bffed9628310cc7a79fb7d2642c1c8b8d265fd92e25ad      854 B  code-linter.json5
 383227660c07fa9335caf3e65b8975c65fcbcc8b910ba84d0bc67b22afcd56cd      227 B  hvigorfile.ts
@@ -49,9 +49,9 @@ ae94f286234d41ad5fa9f70bfd11f61e2f609994d6f16687d1ce4ec442115e5d      522 B  ent
 fda41316d017859518ee317fd7b95fa2de30364253c6c36b46875e9344de608a     5312 B  entry/src/main/ets/pages/RuleListPage.ets
 f9b8d716febc6631a6af918fa622108f6aaadfbbbb62badc4ab5729ab58d7c74     6588 B  entry/src/main/ets/store/LogRepository.ets
 2025436d30b8db14a0ee4a3c01e210b333d9e5a95413a10a6537855d33970a73     2408 B  entry/src/main/ets/store/Prefs.ets
-e0851017d226f2bf97e9528ec792074f20025552b95ee91e2c369113c3a3d175     3692 B  entry/src/main/ets/store/RuleRepository.ets
+0757fca838e6d42d08163758035e29c26d503250db39daac2ebb92772d34ad35     3742 B  entry/src/main/ets/store/RuleRepository.ets
 6f74512c0712accaf9ba021e961a29adeea63be5dd278fd99687a44fd6ba0e63     1446 B  entry/src/main/ets/store/SceneRepository.ets
-3deb86c419e1bd987bca9baf6400ddd7bf336c144a12bf2db1409cbdc9d9bad5     4414 B  entry/src/main/ets/viewmodel/Boot.ets
+7043fae86c42f370898e3155c94d4fea217f1a8cdf1890040460ee861aa93707     4439 B  entry/src/main/ets/viewmodel/Boot.ets
 015f8d2c43b817cbdeac3e359d6be79672f7535fb9de16008373eecd050af6d3     2816 B  entry/src/main/ets/viewmodel/EnvStore.ets
 d7bd81e465acf03f722a0cd3cc01d4c03631311998b39f2d8e22e5cd6d35e074     5739 B  entry/src/main/ets/viewmodel/TickRunner.ets
 40dce2e2f49200e562eaad66d43f3212f4371cafd2c83c558c2cb6401434ef52      105 B  entry/src/main/resources/base/element/color.json
@@ -65,8 +65,8 @@ d6be6bfa9cfce320f6bb9b92dd09614db27e16bc2c9c90edf057bd682dc3ecbf      105 B  ent
 a5b9e3dc7979f961a92ae014ad0f380212f6e83ea6090d512800250640b9bcc0      187 B  entry/src/ohosTest/module.json5
 8600c6681413e2ee3283671c6a67c2bb1421726559163aca8596ff17d2a389d6     1734 B  entry/src/ohosTest/ets/test/Ability.test.ets
 7f3218e723d077e3a7adfb07bf689cb520ed7da886537b344ba338cd1198df51      168 B  entry/src/ohosTest/ets/test/List.test.ets
-d976fa5c9770da4d623ac26916d2905227aa5efd78c63c479c2e6a7cbd747b39     7367 B  entry/src/ohosTest/ets/test/RuleEngine.test.ets
+027f344a240467fe30943b44dac5dc72f90360018755f2d485ca85a305d3c217     7237 B  entry/src/ohosTest/ets/test/RuleEngine.test.ets
 e04db96afb5d1be5cb1d9e507f06139ebfb39d04aad5056ab8314928213d630e      181 B  entry/src/test/List.test.ets
 ab72e1fa03e7c61ec51a52fe56fd366f66aa1a4415e18c7953daf5be14f488b7     1624 B  entry/src/test/LocalUnit.test.ets
-6d7628de400f9765ccbe54c70a376953449d21ef4ea3adf6990d0c88b7e36396     7331 B  entry/src/test/RuleEngine.test.ets
+ddfd5a93a44c2e49b9df038ce5d0bb0e91023cf2bba9d2f45415b96d4036c806     7201 B  entry/src/test/RuleEngine.test.ets
 5d3f095eedc3f393c057a3bdf2fa40a1ac4d115755b2c8a43825be9ac90bbc9b     1482 B  hvigor/hvigor-config.json5
