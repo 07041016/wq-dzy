@@ -41,7 +41,7 @@ export default function ruleEngineTest() {
       expect(plan.steps[0].seq).assertEqual(1);
     });
 
-    // 2 正常：目标值与当前值相同时幂等跳过，不产生冲突
+    // 2 正常：R-94 的目标亮度与当前值相同，因此不产生 brightness 写入动作
     it('should_skipIdempotentAction_whenValueAlreadySame', 0, () => {
       const rules: AutomationRule[] = Defaults.rules();
       const devices: Device[] = Defaults.devices();
@@ -59,7 +59,7 @@ export default function ruleEngineTest() {
       expect(hasBrightness).assertFalse();
     });
 
-    // 3 正常：两条规则争同一 targetKey，低优先级被记录为冲突
+    // 3 正常：两条规则争同一 targetKey，低优先级意图被记录为冲突
     it('should_recordConflict_when_twoRulesShareTarget', 0, () => {
       const rules: AutomationRule[] = Defaults.rules();
       const devices: Device[] = Defaults.devices();

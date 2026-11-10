@@ -83,6 +83,7 @@ export class RuleRepository {
   static async saveDevices(devices: Device[]): Promise<void> {
     const payload: DevicePayload = { schemaVersion: SCHEMA_VERSION, devices: devices };
     await Prefs.putString(KEY_DEVICES, JSON.stringify(payload));
+    await Prefs.flush();
   }
 
   static async loadEnv(): Promise<EnvSnapshot> {
@@ -104,5 +105,6 @@ export class RuleRepository {
   static async saveEnv(env: EnvSnapshot): Promise<void> {
     const payload: EnvPayload = { schemaVersion: SCHEMA_VERSION, env: env };
     await Prefs.putString(KEY_ENV, JSON.stringify(payload));
+    await Prefs.flush();
   }
 }

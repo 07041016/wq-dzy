@@ -81,6 +81,7 @@ export class Boot {
       await RuleRepository.saveDevices(devices);
     }
     await EnvStore.flushNow();
+    await Prefs.flush();
   }
 
   static rules(): AutomationRule[] {
